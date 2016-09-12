@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Employee">
+      <Property name="creationType">com.shoplink.entity.Employee</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="employeeId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="employeeName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="cardId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkerPrint">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="password"/>
+    </DataType>
+    <DataType name="Device">
+      <Property name="creationType">com.shoplink.entity.Device</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="deviceUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceModel">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceStateDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="currentOperator">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="currentOperatorName">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <ClientEvent name="onReady">//view.get(&quot;#dialogLogin&quot;).show();</ClientEvent>
+    <DataSet id="dsEmployee">
+      <Property name="dataProvider">employeeDataAccess#getEmployeeByCardId</Property>
+      <Property name="dataType">[Employee]</Property>
+    </DataSet>
+    <DataSet id="dsDevice">
+      <Property name="dataProvider">deviceDataAccess#getDeviceInfoByDeviceUid</Property>
+      <Property name="dataType">[Device]</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <TouchPanel id="panelLogin">
+      <Property name="caption">欢迎使用制造经理MES-智能终端</Property>
+      <Property name="showCaptionBar">false</Property>
+      <Property name="exClassName">mypanel</Property>
+      <Buttons/>
+      <Children>
+        <TouchButton layoutConstraint="top">
+          <Property name="caption">欢迎使用</Property>
+          <Property name="height">100</Property>
+          <Property name="style">
+            <Property name="font-size">50px</Property>
+            <Property name="font-family">隶书</Property>
+            <Property name="border">0</Property>
+          </Property>
+          <Property name="exClassName">btn</Property>
+        </TouchButton>
+      </Children>
+      <Tools/>
+    </TouchPanel>
+    <TouchPanel>
+      <Property name="caption">请刷员工号</Property>
+      <Property name="showCaptionBar">false</Property>
+      <Property name="exClassName">mypanel</Property>
+      <Buttons/>
+      <Children>
+        <Label layoutConstraint="top">
+          <Property name="height">50</Property>
+        </Label>
+        <TouchPanel layout="form cols:*,80,10,250,10,65,*">
+          <Property name="showCaptionBar">false</Property>
+          <Property name="exClassName">mypanel</Property>
+          <Buttons/>
+          <Children>
+            <Label/>
+            <Label>
+              <Property name="text">用户</Property>
+              <Property name="style">
+                <Property name="font-size">30px</Property>
+              </Property>
+            </Label>
+            <Label/>
+            <TextEditor id="editorCardId">
+              <Property name="visible">true</Property>
+              <Property name="width">200</Property>
+              <Property name="style">
+                <Property name="height">50px</Property>
+                <Property name="font-size">30px</Property>
+              </Property>
+            </TextEditor>
+            <Label/>
+            <TouchButton id="btnEnter">
+              <Property name="caption">Enter</Property>
+              <Property name="height">50</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="width">65</Property>
+              <Property name="style">
+                <Property name="font-size">20px</Property>
+              </Property>
+            </TouchButton>
+            <Label/>
+          </Children>
+          <Tools/>
+        </TouchPanel>
+      </Children>
+      <Tools/>
+    </TouchPanel>
+    <AjaxAction id="ajaxLogin">
+      <Property name="service">employeeDataAccess#login</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

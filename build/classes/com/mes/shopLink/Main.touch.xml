@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View layout="padding:3">
+    <TouchPanel layoutConstraint="top">
+      <Property name="showCaptionBar">false</Property>
+      <Property name="height">50%</Property>
+      <Buttons/>
+      <Children>
+        <TouchButton id="btnTask" layoutConstraint="left ">
+          <Property name="width">32%</Property>
+          <Property name="caption">工位任务</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="style">
+            <Property name="font-size">300%</Property>
+          </Property>
+        </TouchButton>
+        <Label layoutConstraint="left">
+          <Property name="width">3</Property>
+        </Label>
+        <TouchButton id="btnDevice" layoutConstraint="right ">
+          <Property name="width">32%</Property>
+          <Property name="caption">工位设备</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="style">
+            <Property name="font-size">300%</Property>
+          </Property>
+        </TouchButton>
+        <Label layoutConstraint="right">
+          <Property name="width">3</Property>
+        </Label>
+        <Container layoutConstraint="center ">
+          <TouchButton id="btnMaterial">
+            <Property name="caption">工位资源</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="style">
+              <Property name="font-size">300%</Property>
+            </Property>
+            <Property name="exClassName">btn</Property>
+          </TouchButton>
+        </Container>
+      </Children>
+      <Tools/>
+    </TouchPanel>
+    <TouchPanel layoutConstraint="bottom">
+      <Property name="showCaptionBar">false</Property>
+      <Property name="height">50%</Property>
+      <Buttons/>
+      <Children>
+        <TouchButton id="btnShift" layoutConstraint="left ">
+          <Property name="caption">交班管理</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="style">
+            <Property name="font-size">300%</Property>
+          </Property>
+          <Property name="width">49%</Property>
+        </TouchButton>
+        <Container layoutConstraint="center ">
+          <Label>
+            <Property name="width">3</Property>
+          </Label>
+        </Container>
+        <TouchButton id="btnPerformance" layoutConstraint="right ">
+          <Property name="width">49%</Property>
+          <Property name="caption">人员绩效</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="style">
+            <Property name="font-size">300%</Property>
+          </Property>
+        </TouchButton>
+      </Children>
+      <Tools/>
+    </TouchPanel>
+    <TouchPanel id="panelAdapter" layoutConstraint="center">
+      <Property name="showCaptionBar">false</Property>
+      <Property name="height">3</Property>
+      <Property name="caption">调整尺寸</Property>
+      <Buttons/>
+      <Children/>
+      <Tools/>
+    </TouchPanel>
+  </View>
+</ViewConfig>

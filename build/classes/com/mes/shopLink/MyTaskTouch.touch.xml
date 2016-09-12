@@ -1,0 +1,2925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments>
+    <Argument name="btnStyle">
+      <Property name="value">;font-size:30px;height:45px;width:70px</Property>
+    </Argument>
+    <Argument name="deviceUid">
+      <Property name="value">192168100147</Property>
+    </Argument>
+    <Argument name="menuStyle">
+      <Property name="value">;font-size:30px;height:45px</Property>
+    </Argument>
+  </Arguments>
+  <Context/>
+  <Model>
+    <DataType name="Task">
+      <Property name="creationType">com.shoplink.entity.Task</Property>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+        <Property name="label">零件图号</Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+        <Property name="label">零件名称</Property>
+      </PropertyDef>
+      <PropertyDef name="batchNum">
+        <Property></Property>
+        <Property name="label">任务批次</Property>
+      </PropertyDef>
+      <PropertyDef name="operationIdDesc">
+        <Property></Property>
+        <Property name="label">当前工序</Property>
+      </PropertyDef>
+      <PropertyDef name="operationName">
+        <Property></Property>
+        <Property name="label">工序名称</Property>
+      </PropertyDef>
+      <PropertyDef name="planQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">在制数量</Property>
+      </PropertyDef>
+      <PropertyDef name="dispatchQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">派工数量</Property>
+      </PropertyDef>
+      <PropertyDef name="priority">
+        <Property name="dataType">int</Property>
+        <Property name="label">优先级别</Property>
+      </PropertyDef>
+      <PropertyDef name="preOpTime">
+        <Property name="dataType">float</Property>
+        <Property name="label">准备定额工时</Property>
+      </PropertyDef>
+      <PropertyDef name="runTime">
+        <Property name="dataType">float</Property>
+        <Property name="label">单件定额工时</Property>
+      </PropertyDef>
+      <PropertyDef name="planStart">
+        <Property name="dataType">DateTime</Property>
+        <Property name="label">计划开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="planFinish">
+        <Property name="dataType">DateTime</Property>
+        <Property name="label">计划完成时间</Property>
+      </PropertyDef>
+      <PropertyDef name="actualStart">
+        <Property name="dataType">DateTime</Property>
+        <Property name="label">实际开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="actualFinish">
+        <Property name="dataType">DateTime</Property>
+        <Property name="label">实际完成时间</Property>
+        <Property name="readOnly">true</Property>
+      </PropertyDef>
+      <PropertyDef name="taskStateDesc">
+        <Property name="dataType">String</Property>
+        <Property name="label">任务状态</Property>
+      </PropertyDef>
+      <PropertyDef name="completeQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">已完成数</Property>
+      </PropertyDef>
+      <PropertyDef name="taskUid">
+        <Property></Property>
+        <Property name="label">任务号</Property>
+      </PropertyDef>
+      <PropertyDef name="assnUid">
+        <Property></Property>
+        <Property name="label">派工号</Property>
+      </PropertyDef>
+      <PropertyDef name="predTaskStateDesc">
+        <Property name="label">前置任务状态</Property>
+      </PropertyDef>
+      <PropertyDef name="succTaskStateDesc">
+        <Property name="label">后置任务状态</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="WorkRec">
+      <Property name="creationType">com.shoplink.entity.WorkRec</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="taskUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="assnUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="workType">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="worker">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="completeQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="preOpTime">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="runTime">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="boxId"/>
+    </DataType>
+    <DataType name="InvInfo">
+      <Property name="creationType">com.shoplink.entity.InvInfo</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="partType">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="partTypeDesc">
+        <Property></Property>
+        <Property name="label">类型</Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+        <Property name="label">图号</Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+        <Property name="label">名称</Property>
+      </PropertyDef>
+      <PropertyDef name="partDescription">
+        <Property></Property>
+        <Property name="label">规格</Property>
+      </PropertyDef>
+      <PropertyDef name="batchNum">
+        <Property></Property>
+        <Property name="label">批次</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+        <Property name="label">序号</Property>
+      </PropertyDef>
+      <PropertyDef name="reqQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">需求</Property>
+      </PropertyDef>
+      <PropertyDef name="applyQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">申请数</Property>
+      </PropertyDef>
+      <PropertyDef name="invQty">
+        <Property name="label">库存</Property>
+        <Property name="visible">true</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseName">
+        <Property name="label">库房</Property>
+      </PropertyDef>
+      <PropertyDef name="receivedQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">已领</Property>
+      </PropertyDef>
+      <PropertyDef name="taskStateDesc">
+        <Property></Property>
+        <Property name="label">任务状态</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="applyStateDesc">
+        <Property></Property>
+        <Property name="label">申请状态</Property>
+      </PropertyDef>
+      <PropertyDef name="position">
+        <Property></Property>
+        <Property name="label">位置</Property>
+      </PropertyDef>
+      <PropertyDef name="boxName">
+        <Property></Property>
+        <Property name="label">周转箱</Property>
+      </PropertyDef>
+      <PropertyDef name="planReturnDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">应还时间</Property>
+      </PropertyDef>
+      <PropertyDef name="signDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">签收时间</Property>
+      </PropertyDef>
+      <PropertyDef name="completeQty">
+        <Property name="visible">false</Property>
+        <Property name="label">当前完成</Property>
+      </PropertyDef>
+      <PropertyDef name="ioState">
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="invDemandId">
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="invDemandSeq">
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseId">
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="trackingType">
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="materialDesc">
+        <Property name="label">前序质量状态</Property>
+      </PropertyDef>
+      <PropertyDef name="preTaskCompleteQty">
+        <Property name="label">前序完成</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="isWarehouseOK">
+        <Property name="visible">false</Property>
+        <Property name="label">库存状态</Property>
+      </PropertyDef>
+      <PropertyDef name="binId"/>
+    </DataType>
+    <DataType name="CheckBill">
+      <Property name="creationType">com.shoplink.entity.CheckBill</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkBillUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkType">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="checkState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="billNumber">
+        <Property></Property>
+        <Property name="label">单号</Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+        <Property name="label">图号</Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+        <Property name="label">名称</Property>
+      </PropertyDef>
+      <PropertyDef name="batchnum">
+        <Property></Property>
+        <Property name="label">批次</Property>
+      </PropertyDef>
+      <PropertyDef name="operationNumber">
+        <Property></Property>
+        <Property name="label">工序号</Property>
+      </PropertyDef>
+      <PropertyDef name="operaitonName">
+        <Property></Property>
+        <Property name="label">工序名称</Property>
+      </PropertyDef>
+      <PropertyDef name="taskUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checker">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">检验时间</Property>
+      </PropertyDef>
+      <PropertyDef name="planQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">在制数</Property>
+      </PropertyDef>
+      <PropertyDef name="submitQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">送检数</Property>
+      </PropertyDef>
+      <PropertyDef name="defectQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">不合格数</Property>
+      </PropertyDef>
+      <PropertyDef name="checkTypeDesc">
+        <Property></Property>
+        <Property name="label">检验类型</Property>
+      </PropertyDef>
+      <PropertyDef name="checkStateDesc">
+        <Property></Property>
+        <Property name="label">检验状态</Property>
+      </PropertyDef>
+      <PropertyDef name="checkBillDetails">
+        <Property name="dataType">[CheckBillDetail]</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="CheckBillDetail">
+      <Property name="creationType">com.shoplink.entity.CheckBillDetail</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkBillUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="seq">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="dimensionUid">
+        <Property></Property>
+        <Property name="label">尺寸编号</Property>
+      </PropertyDef>
+      <PropertyDef name="dimensionType">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="dimensionTypeDesc">
+        <Property></Property>
+        <Property name="label">尺寸类型</Property>
+      </PropertyDef>
+      <PropertyDef name="standardValue">
+        <Property></Property>
+        <Property name="label">标准值</Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+        <Property name="label">零件编号</Property>
+      </PropertyDef>
+      <PropertyDef name="actualValue1">
+        <Property></Property>
+        <Property name="label">自检值</Property>
+      </PropertyDef>
+      <PropertyDef name="measureToolUid1">
+        <Property></Property>
+        <Property name="label">量仪编号</Property>
+      </PropertyDef>
+      <PropertyDef name="checker1">
+        <Property></Property>
+        <Property name="label">检验员</Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime1">
+        <Property></Property>
+        <Property name="label">自检时间</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="actualValue2">
+        <Property></Property>
+        <Property name="label">互检值</Property>
+      </PropertyDef>
+      <PropertyDef name="measureToolUid2">
+        <Property></Property>
+        <Property name="label">量仪编号</Property>
+      </PropertyDef>
+      <PropertyDef name="checker2">
+        <Property></Property>
+        <Property name="label">检验员</Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime2">
+        <Property></Property>
+        <Property name="label">互检时间</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="actualValue">
+        <Property></Property>
+        <Property name="label">检验值</Property>
+      </PropertyDef>
+      <PropertyDef name="measureToolUid">
+        <Property></Property>
+        <Property name="label">量仪编号</Property>
+      </PropertyDef>
+      <PropertyDef name="checker">
+        <Property></Property>
+        <Property name="label">检验员</Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime">
+        <Property></Property>
+        <Property name="label">检验时间</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="defectQty">
+        <Property name="dataType">long</Property>
+      </PropertyDef>
+      <PropertyDef name="qualityState">
+        <Property name="dataType">long</Property>
+      </PropertyDef>
+      <PropertyDef name="qualityStateDesc">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="spcStandardValue"/>
+      <PropertyDef name="upLimit">
+        <Property name="label">上偏差</Property>
+      </PropertyDef>
+      <PropertyDef name="downLimit">
+        <Property name="label">下偏差</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Material">
+      <Property name="creationType">com.shoplink.entity.Material</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchnum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="barcode">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Warehouse">
+      <Property name="creationType">com.shoplink.entity.Warehouse</Property>
+      <PropertyDef name="warehouseId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Temp">
+      <PropertyDef name="warehouseId"/>
+      <PropertyDef name="warehouseName"/>
+      <PropertyDef name="stationId"/>
+      <PropertyDef name="stationName"/>
+      <PropertyDef name="barcode"/>
+    </DataType>
+    <DataType name="WorkStation">
+      <Property name="creationType">com.shoplink.entity.WorkStation</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="stationId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="stationName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptName">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="FileInfo">
+      <Property name="creationType">com.shoplink.entity.FileInfo</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="fileName">
+        <Property></Property>
+        <Property name="label">名称</Property>
+      </PropertyDef>
+      <PropertyDef name="fileType">
+        <Property></Property>
+        <Property name="label">类型</Property>
+      </PropertyDef>
+      <PropertyDef name="fileUrl">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="isMustRead">
+        <Property name="dataType">boolean</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="isReaded">
+        <Property name="dataType">boolean</Property>
+        <Property name="label">已读</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="fileUid">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="signer">
+        <Property></Property>
+        <Property name="label">签收人员</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="signDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">签收时间</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Message">
+      <Property name="creationType">com.shoplink.entity.Message</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="messageUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="topic">
+        <Property></Property>
+        <Property name="label">主题</Property>
+      </PropertyDef>
+      <PropertyDef name="content">
+        <Property></Property>
+        <Property name="label">内容</Property>
+      </PropertyDef>
+      <PropertyDef name="messageState">
+        <Property name="dataType">int</Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="messageStateDesc">
+        <Property></Property>
+        <Property name="label">消息状态</Property>
+      </PropertyDef>
+      <PropertyDef name="messageType">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="messageTypeDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="messagePriority">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="messagePriorityDesc">
+        <Property></Property>
+        <Property name="label">优先级</Property>
+      </PropertyDef>
+      <PropertyDef name="sender">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="senderName">
+        <Property></Property>
+        <Property name="label">发送者</Property>
+      </PropertyDef>
+      <PropertyDef name="sendTime">
+        <Property name="dataType">DateTime</Property>
+        <Property name="label">发送时间</Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptName">
+        <Property></Property>
+        <Property name="label">部门</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="DeviceProblem">
+      <Property name="creationType">com.shoplink.entity.DeviceProblem</Property>
+      <PropertyDef name="problemCode">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="problemDesc">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Employee">
+      <Property name="creationType">com.shoplink.entity.Employee</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="employeeId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="employeeName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="cardId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkerPrint">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="ToolClassInfo">
+      <Property name="creationType">com.shoplink.entity.ToolClassInfo</Property>
+      <Reference name="toolClass">
+        <Property name="parameter">$${this.classId}</Property>
+        <Property name="dataProvider">invInfoDataAccess#getToolsByParentId</Property>
+        <Property name="dataType">[SELF]</Property>
+      </Reference>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="classId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="className">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="ToolInvInfo">
+      <Property name="creationType">com.shoplink.entity.ToolInvInfo</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="partTypeDesc">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+        <Property name="label">图号</Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+        <Property name="label">名称</Property>
+      </PropertyDef>
+      <PropertyDef name="partDescription">
+        <Property></Property>
+        <Property name="label">规格</Property>
+      </PropertyDef>
+      <PropertyDef name="reqQty">
+        <Property name="dataType">float</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="borrowedQty">
+        <Property name="dataType">float</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="applyStatus">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="boxUid">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="toolUid">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="invQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">数量</Property>
+      </PropertyDef>
+      <PropertyDef name="applyQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">申请数</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseId">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseName">
+        <Property></Property>
+        <Property name="visible">false</Property>
+        <Property name="label">库房</Property>
+      </PropertyDef>
+      <PropertyDef name="binId"/>
+      <PropertyDef name="binName">
+        <Property name="label">工位</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="InvIoDetail">
+      <Property name="creationType">com.shoplink.entity.InvIoDetail</Property>
+      <PropertyDef name="uniqueId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="invIoId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="seq">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="binId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+        <Property name="label">编号</Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchnum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+        <Property name="label">序号</Property>
+      </PropertyDef>
+      <PropertyDef name="applyQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="ioQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">数量</Property>
+      </PropertyDef>
+      <PropertyDef name="planReturnDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">应还时间</Property>
+      </PropertyDef>
+      <PropertyDef name="returnQty">
+        <Property name="dataType">float</Property>
+        <Property name="label">归还数</Property>
+      </PropertyDef>
+      <PropertyDef name="turnBoxId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="turnBoxName">
+        <Property></Property>
+        <Property name="label">类别</Property>
+      </PropertyDef>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+        <Property name="label">图号</Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+        <Property name="label">名称</Property>
+      </PropertyDef>
+      <PropertyDef name="partDescription">
+        <Property></Property>
+        <Property name="label">规格</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="InvIo">
+      <Property name="creationType">com.shoplink.entity.InvIo</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="invIoId">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="ioType">
+        <Property name="dataType">int</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="ioTypeDesc">
+        <Property></Property>
+        <Property name="label">类型</Property>
+      </PropertyDef>
+      <PropertyDef name="ioState">
+        <Property name="dataType">int</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="ioStateDesc">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseId">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="applyer">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="applyerName">
+        <Property></Property>
+        <Property name="label">申请人</Property>
+      </PropertyDef>
+      <PropertyDef name="applyDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">申请日期</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseManager">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouseManagerName">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="ioDate">
+        <Property name="dataType">Date</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="transporter">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="transporterName">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="signer">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="signerName">
+        <Property></Property>
+        <Property name="label">签收人</Property>
+      </PropertyDef>
+      <PropertyDef name="signDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">签收日期</Property>
+      </PropertyDef>
+      <PropertyDef name="destinationId">
+        <Property></Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="invIoDetails">
+        <Property name="dataType">[InvIoDetail]</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="TypesData">
+      <Property name="creationType">com.shoplink.entity.TypesData</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="typeValue">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="typeDesc">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsTasks">
+      <Property name="dataType">[Task]</Property>
+      <Property name="ignored">false</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="dataProvider">taskDataAccess#getDispatchedTasksByDeviceUid</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsTasksTemp">
+      <Property name="dataType">[Task]</Property>
+      <Property name="ignored">false</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="dataProvider">taskDataAccess#getDispatchedTasksByDeviceUid</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsWorkRec">
+      <Property name="dataType">[WorkRec]</Property>
+    </DataSet>
+    <DataSet id="dsTaskWip">
+      <Property name="dataType">[InvInfo]</Property>
+      <Property name="dataProvider">taskDataAccess#getTaskWips</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsTaskTool">
+      <Property name="dataProvider">taskDataAccess#getTaskTools</Property>
+      <Property name="dataType">[InvInfo]</Property>
+      <Property name="loadMode">manual</Property>
+      <Property name="parameter"></Property>
+    </DataSet>
+    <DataSet id="dsCheckBill">
+      <Property name="dataType">[CheckBill]</Property>
+      <Property name="dataProvider">taskDataAccess#getCheckBillByTaskUid</Property>
+    </DataSet>
+    <DataSet id="dsMaterial">
+      <Property name="dataType">[Material]</Property>
+      <Property name="dataProvider">taskDataAccess#getMaterialListByTaskUid</Property>
+    </DataSet>
+    <DataSet id="dsWarehouse">
+      <Property name="dataType">[Warehouse]</Property>
+      <Property name="dataProvider">invInfoDataAccess#getStationWarehouse</Property>
+    </DataSet>
+    <DataSet id="dsToolWarehouse">
+      <Property name="dataType">[Warehouse]</Property>
+      <Property name="dataProvider">invInfoDataAccess#getStationWarehouse</Property>
+    </DataSet>
+    <DataSet id="dsWorkStation">
+      <Property name="dataType">[WorkStation]</Property>
+      <Property name="dataProvider">invInfoDataAccess#getStation</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsFileInfo">
+      <Property name="dataType">[FileInfo]</Property>
+      <Property name="dataProvider">fileInfoDataAccess#getTaskProcessFiles</Property>
+      <Property name="parameter"></Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsForm">
+      <Property name="dataType">[Temp]</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsMessage">
+      <Property name="dataType">[Message]</Property>
+      <Property name="dataProvider">messageDataAccess#getUnReadMessagesByEmployeeId</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsDeviceProblem">
+      <Property name="dataProvider">messageDataAccess#getProblemType</Property>
+      <Property name="dataType">[DeviceProblem]</Property>
+    </DataSet>
+    <DataSet id="dsEmployee">
+      <Property name="dataProvider">employeeDataAccess#getEmployeeByCardId</Property>
+      <Property name="dataType">[Employee]</Property>
+    </DataSet>
+    <DataSet id="dsMeasureTool">
+      <Property name="dataType">[Material]</Property>
+      <Property name="dataProvider">taskDataAccess#getMaterialByBarcode</Property>
+    </DataSet>
+    <DataSet id="dsToolClassInfo">
+      <Property name="dataProvider">invInfoDataAccess#getToolsByParentId</Property>
+      <Property name="parameter"></Property>
+      <Property name="dataType">[ToolClassInfo]</Property>
+    </DataSet>
+    <DataSet id="dsToolInvInfo">
+      <Property name="dataType">[ToolInvInfo]</Property>
+      <Property name="dataProvider">invInfoDataAccess#getToolInvInfoByToolType</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="toolType">T</Property>
+        </Entity>
+      </Property>
+    </DataSet>
+    <DataSet id="dsWipWorkRec">
+      <Property name="dataType">[WorkRec]</Property>
+    </DataSet>
+    <DataSet id="dsToolInvDetail">
+      <Property name="dataProvider">invInfoDataAccess#getStationToolInvDetail</Property>
+      <Property name="dataType">[ToolInvInfo]</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsInvIo">
+      <Property name="dataProvider">invInfoDataAccess#getInvIoInfo</Property>
+      <Property name="dataType">[InvIo]</Property>
+    </DataSet>
+    <AutoForm id="autoForm1" layoutConstraint="padding:10">
+      <Property name="cols">*,*</Property>
+      <Property name="dataSet">dsTasks</Property>
+      <Property name="visible">false</Property>
+      <Property name="ui">optional1</Property>
+      <Property name="labelWidth">200</Property>
+      <Property name="rowHeight">35</Property>
+      <Property name="style">
+        <Property name="font-size">150%</Property>
+        <Property name="font-family">微软雅黑</Property>
+      </Property>
+      <Property name="width">98%</Property>
+      <AutoFormElement>
+        <Property name="name">drawingId</Property>
+        <Property name="property">drawingId</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">partName</Property>
+        <Property name="property">partName</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">batchNum</Property>
+        <Property name="property">batchNum</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">taskUid</Property>
+        <Property name="property">taskUid</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">operationIdDesc</Property>
+        <Property name="property">operationIdDesc</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">operationName</Property>
+        <Property name="property">operationName</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">dispatchQty</Property>
+        <Property name="property">dispatchQty</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">planQty</Property>
+        <Property name="property">planQty</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">preOpTime</Property>
+        <Property name="property">preOpTime</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">runTime</Property>
+        <Property name="property">runTime</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">planStart</Property>
+        <Property name="property">planStart</Property>
+        <Property name="editorType">Label</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">planFinish</Property>
+        <Property name="property">planFinish</Property>
+        <Property name="editorType">Label</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">actualStart</Property>
+        <Property name="property">actualStart</Property>
+        <Property name="editorType">Label</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">actualFinish</Property>
+        <Property name="property">actualFinish</Property>
+        <Property name="editorType">Label</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">taskStateDesc</Property>
+        <Property name="property">taskStateDesc</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">completeQty</Property>
+        <Property name="property">completeQty</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">predTaskStateDesc</Property>
+        <Property name="property">predTaskStateDesc</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">succTaskStateDesc</Property>
+        <Property name="property">succTaskStateDesc</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
+    <TouchToolBar id="tbTaskInfo" layoutConstraint="top">
+      <Property name="style">
+        <Property name="font-size">25px</Property>
+        <Property name="background">#ffffff</Property>
+      </Property>
+      <Property name="height">50</Property>
+      <Label>
+        <Property name="text">任务优先级：</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+        </Property>
+      </Label>
+      <Image id="imageTaskPriority"/>
+      <TouchToolBarSpacer/>
+    </TouchToolBar>
+    <TouchTabControl>
+      <TabButton id="tabButton1">
+        <Property name="caption">任务</Property>
+        <Property name="width">100</Property>
+        <Property name="style">
+          <Property name="font-family">微软雅黑</Property>
+          <Property name="font-size">25px</Property>
+        </Property>
+        <Container>
+          <TouchPanel layoutConstraint="bottom">
+            <Property name="showCaptionBar">false</Property>
+            <Property name="height">60</Property>
+            <Buttons/>
+            <Children>
+              <TouchToolBar>
+                <Property name="style">
+                  <Property name="border-top">#1E90FF</Property>
+                </Property>
+                <TextEditor id="editorOperationCode">
+                  <Property name="style">
+                    <Property name="text-align">center</Property>
+                    <Property name="height">45</Property>
+                    <Property name="font-size">120%</Property>
+                  </Property>
+                  <Property name="blankText">请刷操作码</Property>
+                </TextEditor>
+                <TouchToolBarSpacer/>
+                <TouchButton id="btnAdd1">
+                  <Property name="caption">+1</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">1</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnMinus1">
+                  <Property name="caption">-1</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">-1</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnAdd5">
+                  <Property name="caption">+5</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">5</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnMinus5">
+                  <Property name="caption">-5</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">-5</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnRatio">
+                  <Property name="caption">倍率</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">1</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnFeedBack">
+                  <Property name="caption">反馈</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchToolBarSpacer/>
+                <TouchButton layoutConstraint="align:bottom">
+                  <Property name="caption">状态</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="menu">touchMenuState</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnInterruptTask" layoutConstraint="align:bottom">
+                  <Property name="caption">中断</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">9</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnPauseTask" layoutConstraint="align:bottom">
+                  <Property name="caption">暂停</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="userData">8</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton layoutConstraint="align:bottom">
+                  <Property name="caption">检验</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="menu">touchMenuCheck</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnRefresh" layoutConstraint="align:bottom">
+                  <Property name="caption">刷新</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="visible">true</Property>
+                </TouchButton>
+              </TouchToolBar>
+            </Children>
+            <Tools/>
+          </TouchPanel>
+          <TouchPanel>
+            <Property name="showCaptionBar">false</Property>
+            <Buttons/>
+            <Children>
+              <Container>
+                <TouchCarousel id="carouselTask">
+                  <Property name="exClassName">carousel</Property>
+                </TouchCarousel>
+              </Container>
+            </Children>
+            <Tools/>
+          </TouchPanel>
+        </Container>
+      </TabButton>
+      <TabButton id="tabButton2">
+        <Property name="caption">物料</Property>
+        <Property name="width">100</Property>
+        <Property name="style">
+          <Property name="font-family">微软雅黑</Property>
+          <Property name="font-size">25px</Property>
+        </Property>
+        <Container>
+          <TouchToolBar layoutConstraint="top">
+            <Property name="height">50</Property>
+            <TouchButton>
+              <Property name="width">130</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+                <Property name="height"></Property>
+              </Property>
+              <Property name="caption">签收/总数：</Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <TouchButton id="btnReceivedQty">
+              <Property name="width">130</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+                <Property name="height"></Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <Label>
+              <Property name="visible">false</Property>
+            </Label>
+            <TouchToolBarSpacer/>
+            <Label>
+              <Property name="text">选择库房：</Property>
+              <Property name="style">
+                <Property name="font-size">20px</Property>
+                <Property name="height">30</Property>
+              </Property>
+              <Property name="visible">false</Property>
+            </Label>
+            <TextEditor id="editorWarehouse1" layoutConstraint="center">
+              <Property name="trigger">dropdownWarehouse</Property>
+              <Property name="dataSet">dsForm</Property>
+              <Property name="property">warehouseName</Property>
+              <Property name="style">
+                <Property name="height">30</Property>
+              </Property>
+              <Property name="visible">false</Property>
+            </TextEditor>
+            <Label>
+              <Property name="visible">true</Property>
+              <Property name="width">20</Property>
+            </Label>
+            <Label>
+              <Property name="text">选择工位：</Property>
+              <Property name="style">
+                <Property name="font-size">30px</Property>
+              </Property>
+            </Label>
+            <TextEditor id="editorStation1">
+              <Property name="trigger">dropdownStation</Property>
+              <Property name="dataSet">dsForm</Property>
+              <Property name="property">stationName</Property>
+              <Property name="style">
+                <Property name="height">35</Property>
+              </Property>
+              <Property name="editable">false</Property>
+            </TextEditor>
+            <Label>
+              <Property name="visible">true</Property>
+              <Property name="width">10</Property>
+            </Label>
+            <TouchButton id="btnWipAdd1">
+              <Property name="caption">+1</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+              <Property name="visible">true</Property>
+            </TouchButton>
+            <TouchButton id="btnWipMinus1">
+              <Property name="caption">-1</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+              <Property name="visible">true</Property>
+            </TouchButton>
+          </TouchToolBar>
+          <TouchDataGrid id="dataGridTaskWip">
+            <Property name="dataSet">dsTaskWip</Property>
+            <Property name="headerRowHeight">50</Property>
+            <Property name="rowHeight">40</Property>
+            <Property name="autoCreateColumns">false</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <Property name="style">
+              <Property name="font-size">20px</Property>
+            </Property>
+            <TouchRowSelectorColumn>
+              <Property name="width">60</Property>
+            </TouchRowSelectorColumn>
+            <TouchRowNumColumn>
+              <Property name="width">50</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <Property name="property">drawingId</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partDescription</Property>
+              <Property name="visible">true</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">batchNum</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">sn</Property>
+              <Property name="align">center</Property>
+              <Property name="width">100</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">applyQty</Property>
+              <Property name="align">center</Property>
+              <Property name="width">70</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">reqQty</Property>
+              <Property name="caption">零件数</Property>
+              <Property name="align">center</Property>
+              <Property name="width">70</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell">	var receivedQty = arg.data.get(&quot;receivedQty&quot;);&#xD;
+	if(receivedQty == 0){&#xD;
+		arg.dom.style.color = &quot;red&quot;;&#xD;
+	}else{&#xD;
+		arg.dom.style.color = &quot;black&quot;;&#xD;
+	}&#xD;
+	arg.processDefault = true;&#xD;
+		</ClientEvent>
+              <Property name="property">receivedQty</Property>
+              <Property name="align">center</Property>
+              <Property name="width">70</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell">	var completeQty = arg.data.get(&quot;completeQty&quot;);&#xD;
+	if(completeQty == 0){&#xD;
+		arg.dom.style.color = &quot;red&quot;;&#xD;
+	}else{&#xD;
+		arg.dom.style.color = &quot;black&quot;;&#xD;
+	}&#xD;
+	arg.processDefault = true;&#xD;
+		</ClientEvent>
+              <Property name="property">completeQty</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell">var completeQty = arg.data.get(&quot;preTaskCompleteQty&quot;);&#xD;
+	if(completeQty == 0){&#xD;
+		arg.dom.style.color = &quot;red&quot;;&#xD;
+	}else{&#xD;
+		arg.dom.style.color = &quot;black&quot;;&#xD;
+	}&#xD;
+	arg.processDefault = true;</ClientEvent>
+              <Property name="property">preTaskCompleteQty</Property>
+              <Property name="align">center</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">applyStateDesc</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">position</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">materialDesc</Property>
+              <Property name="width">150</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+          <TouchPanel layoutConstraint="bottom">
+            <Property name="showCaptionBar">false</Property>
+            <Buttons/>
+            <Children>
+              <TouchToolBar>
+                <Property name="height">60</Property>
+                <TextEditor id="editorInvIoIdForWip">
+                  <Property name="style">
+                    <Property name="text-align">center</Property>
+                    <Property name="height">45</Property>
+                    <Property name="font-size">120%</Property>
+                  </Property>
+                  <Property name="blankText">请刷单号</Property>
+                  <Property name="visible">true</Property>
+                </TextEditor>
+                <TouchButton id="btnTaskWipSign">
+                  <Property name="caption">物料签收</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                    <Property name="height"></Property>
+                  </Property>
+                  <Property name="visible">false</Property>
+                </TouchButton>
+                <TouchToolBarSpacer/>
+                <TouchButton id="btnShiftStation">
+                  <Property name="caption">移交工位</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="visible">false</Property>
+                </TouchButton>
+                <TouchButton id="btnTaskWipOut">
+                  <Property name="caption">申请领料</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnTaskWipIn">
+                  <Property name="caption">申请入库</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnTaskWipFeedback">
+                  <Property name="caption">反馈</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">70</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnCancelFeedback">
+                  <Property name="caption">取消反馈</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                    <Property name="height"></Property>
+                  </Property>
+                </TouchButton>
+              </TouchToolBar>
+            </Children>
+            <Tools/>
+          </TouchPanel>
+        </Container>
+      </TabButton>
+      <TabButton id="tabButton3">
+        <Property name="caption">工具</Property>
+        <Property name="width">100</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="font-family">微软雅黑</Property>
+        </Property>
+        <Container>
+          <TouchToolBar layoutConstraint="top">
+            <Property name="height">50</Property>
+            <TouchButton id="btnAll">
+              <Property name="caption">全部</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <TouchButton id="btnTD">
+              <Property name="caption">刀具</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <TouchButton id="btnTJ">
+              <Property name="caption">夹具</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <TouchButton id="btnTL">
+              <Property name="caption">量具</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <Label>
+              <Property name="visible">false</Property>
+            </Label>
+            <TouchToolBarSpacer/>
+            <Label>
+              <Property name="text">选择库房：</Property>
+              <Property name="style">
+                <Property name="font-size">20px</Property>
+                <Property name="height">30</Property>
+              </Property>
+              <Property name="visible">false</Property>
+            </Label>
+            <TextEditor id="editorWarehouse2" layoutConstraint="center">
+              <Property name="trigger">dropdownWarehouse</Property>
+              <Property name="dataSet">dsForm</Property>
+              <Property name="property">warehouseName</Property>
+              <Property name="style">
+                <Property name="height">30</Property>
+              </Property>
+              <Property name="visible">false</Property>
+            </TextEditor>
+            <Label>
+              <Property name="visible">true</Property>
+              <Property name="width">20</Property>
+            </Label>
+            <Label>
+              <Property name="text">选择工位：</Property>
+              <Property name="style">
+                <Property name="font-size">30px</Property>
+              </Property>
+              <Property name="visible">true</Property>
+            </Label>
+            <TextEditor id="editorStation2">
+              <Property name="trigger">dropdownStation</Property>
+              <Property name="dataSet">dsForm</Property>
+              <Property name="property">stationName</Property>
+              <Property name="style">
+                <Property name="height">35</Property>
+              </Property>
+              <Property name="visible">true</Property>
+            </TextEditor>
+            <Label>
+              <Property name="visible">true</Property>
+              <Property name="width">10</Property>
+            </Label>
+            <TouchButton id="btnTaskToolAdd1">
+              <Property name="caption">+1</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <TouchButton id="btnTaskToolMinus1">
+              <Property name="caption">-1</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+          </TouchToolBar>
+          <TouchDataGrid id="dataGridTaskTool">
+            <Property name="dataSet">dsTaskTool</Property>
+            <Property name="rowHeight">40</Property>
+            <Property name="headerRowHeight">50</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <Property name="style">
+              <Property name="font-size">20px</Property>
+            </Property>
+            <TouchRowSelectorColumn>
+              <Property name="width">60</Property>
+            </TouchRowSelectorColumn>
+            <TouchRowNumColumn>
+              <Property name="width">50</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <Property name="property">partTypeDesc</Property>
+              <Property name="width">150</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">drawingId</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partDescription</Property>
+              <Property name="width">160</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">sn</Property>
+              <Property name="align">center</Property>
+              <Property name="visible">true</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">reqQty</Property>
+              <Property name="width">70</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">applyQty</Property>
+              <Property name="align">center</Property>
+              <Property name="width">70</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell">	var receivedQty = arg.data.get(&quot;receivedQty&quot;);&#xD;
+	if(receivedQty == 0){&#xD;
+		arg.dom.style.color = &quot;red&quot;;&#xD;
+	}else{&#xD;
+		arg.dom.style.color = &quot;black&quot;;&#xD;
+	}&#xD;
+	arg.processDefault = true;&#xD;
+		</ClientEvent>
+              <Property name="property">receivedQty</Property>
+              <Property name="width">70</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell" signature="self,arg,dsToolInvDetail,dsTaskTool,panelToolInvDetail">	var invQty = arg.data.get(&quot;invQty&quot;);&#xD;
+&#xD;
+		$(arg.dom).empty().xCreate({&#xD;
+&#xD;
+		tagName : &quot;Button&quot;,&#xD;
+		content: invQty+&quot;&quot;,&#xD;
+		style : &quot;width:60px; height:38px;background: #1E90FF; color:#FFF;&quot;,&#xD;
+		onclick: function(){&#xD;
+				&#xD;
+				setTimeout(function(){&#xD;
+					&#xD;
+					var tool = dsTaskTool.getData().current;&#xD;
+					var partNumber = tool.get(&quot;partNumber&quot;);&#xD;
+					&#xD;
+					//alert(partNumber);&#xD;
+					dsToolInvDetail.set(&quot;parameter&quot;, {&#xD;
+						partNumber: partNumber&#xD;
+				&#xD;
+					});&#xD;
+					&#xD;
+					dsToolInvDetail.flush();&#xD;
+					&#xD;
+					panelToolInvDetail.show();&#xD;
+				&#xD;
+				}, 100);&#xD;
+			}	&#xD;
+		});</ClientEvent>
+              <Property name="property">invQty</Property>
+              <Property name="align">center</Property>
+              <Property name="width">70</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">taskStateDesc</Property>
+              <Property name="visible">true</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">ioState</Property>
+              <Property name="align">center</Property>
+              <Property name="caption">申请状态</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">warehouseName</Property>
+              <Property name="width">100</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">applyStateDesc</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">materialUsn</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+          <TouchPanel layoutConstraint="bottom">
+            <Property name="showCaptionBar">false</Property>
+            <Buttons/>
+            <Children>
+              <TouchToolBar>
+                <Property name="height">60</Property>
+                <TextEditor id="editorInvIoIdForTool">
+                  <Property name="style">
+                    <Property name="text-align">center</Property>
+                    <Property name="height">45</Property>
+                    <Property name="font-size">120%</Property>
+                  </Property>
+                  <Property name="blankText">请刷单号</Property>
+                </TextEditor>
+                <TouchToolBarSpacer/>
+                <TouchButton id="btnAddTool">
+                  <Property name="caption">增加刀具</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="visible">false</Property>
+                </TouchButton>
+                <TouchButton id="btnSignList">
+                  <Property name="caption">签收信息</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="width">120</Property>
+                  <Property name="visible">false</Property>
+                </TouchButton>
+                <TouchButton id="btnShiftStationForTool">
+                  <Property name="caption">移交工位</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="visible">false</Property>
+                </TouchButton>
+                <TouchButton id="btnTaskToolOut">
+                  <Property name="caption">申请借用</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnTaskToolIn">
+                  <Property name="caption">申请归还</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="width">130</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                  <Property name="visible">true</Property>
+                </TouchButton>
+              </TouchToolBar>
+            </Children>
+            <Tools/>
+          </TouchPanel>
+        </Container>
+      </TabButton>
+      <TabButton id="tabButton4">
+        <Property name="caption">技术文档</Property>
+        <Property name="width">120</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="font-family">微软雅黑</Property>
+        </Property>
+        <Container>
+          <IFrame id="iFrame1" layoutConstraint="right">
+            <Property name="width">900</Property>
+          </IFrame>
+          <TouchToolBar layoutConstraint="top">
+            <Property name="height">50</Property>
+            <Label>
+              <Property name="text">图纸列表</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="width">120</Property>
+            </Label>
+            <TouchToolBarSpacer/>
+            <TouchButton id="btnFull">
+              <Property name="caption">全屏</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+              </Property>
+              <Property name="height">40</Property>
+              <Property name="visible">true</Property>
+            </TouchButton>
+          </TouchToolBar>
+          <TouchDataGrid id="dataGridFile">
+            <Property name="dataSet">dsFileInfo</Property>
+            <Property name="rowHeight">40</Property>
+            <Property name="headerRowHeight">50</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <Property name="style">
+              <Property name="font-size">20px</Property>
+            </Property>
+            <TouchRowNumColumn>
+              <Property name="width">60</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <Property name="property">fileName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">fileType</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="width">60</Property>
+              <Property name="property">isReaded</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+          <TouchPanel layoutConstraint="bottom">
+            <Property name="showCaptionBar">false</Property>
+            <Buttons/>
+            <Children>
+              <TouchToolBar>
+                <Property name="height">60</Property>
+                <TouchButton id="btnOther">
+                  <Property name="caption">全部</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnDrawing">
+                  <Property name="caption">图纸</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchButton id="btnCard">
+                  <Property name="caption">卡片</Property>
+                  <Property name="ui">highlight</Property>
+                  <Property name="style">
+                    <Property name="style">${argument.btnStyle}</Property>
+                  </Property>
+                </TouchButton>
+                <TouchToolBarSpacer/>
+              </TouchToolBar>
+            </Children>
+            <Tools/>
+          </TouchPanel>
+        </Container>
+      </TabButton>
+      <TabButton id="tabButton5">
+        <Property name="caption">系统通知</Property>
+        <Property name="width">120</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="font-family">微软雅黑</Property>
+        </Property>
+        <Container>
+          <TouchToolBar layoutConstraint="top">
+            <Property name="height">50</Property>
+            <Label>
+              <Property name="text">请选择接收方：</Property>
+              <Property name="ui">default</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+                <Property name="font-size">25px</Property>
+              </Property>
+              <Property name="width">180</Property>
+            </Label>
+            <TouchToolBarSpacer>
+              <Property name="width">20</Property>
+            </TouchToolBarSpacer>
+            <RadioGroup id="radioGroup1">
+              <Property name="style">
+                <Property name="font-size">25px</Property>
+                <Property name="line-height">150%</Property>
+              </Property>
+              <Property name="layout">flow</Property>
+              <Property name="columnCount">3</Property>
+              <RadioButton>
+                <Property name="text">工艺室</Property>
+                <Property name="value">1</Property>
+              </RadioButton>
+              <RadioButton>
+                <Property name="text">机修室</Property>
+                <Property name="value">2</Property>
+              </RadioButton>
+              <RadioButton>
+                <Property name="text">前序工位</Property>
+                <Property name="value">3</Property>
+              </RadioButton>
+              <RadioButton>
+                <Property name="text">后序工位</Property>
+                <Property name="value">4</Property>
+              </RadioButton>
+            </RadioGroup>
+            <TouchToolBarSpacer/>
+          </TouchToolBar>
+          <TouchToolBar layoutConstraint="top">
+            <Property name="height">50</Property>
+            <Label>
+              <Property name="text">通知列表</Property>
+              <Property name="style">
+                <Property name="font-size">25px</Property>
+              </Property>
+            </Label>
+            <TouchToolBarSpacer/>
+            <Label>
+              <Property name="text">选择问题：</Property>
+              <Property name="style">
+                <Property name="style">${argument.btnStyle}</Property>
+                <Property name="height">30</Property>
+                <Property name="font-size">25px</Property>
+              </Property>
+              <Property name="width">150</Property>
+            </Label>
+            <TextEditor id="editorDeviceProblem" layoutConstraint="center">
+              <Property name="trigger">dropDownDeviceProblem</Property>
+              <Property name="style">
+                <Property name="height">35px</Property>
+              </Property>
+              <Property name="width">250</Property>
+            </TextEditor>
+            <Label>
+              <Property name="width">5</Property>
+            </Label>
+            <TouchButton id="btn_sendMessage">
+              <Property name="caption">发送</Property>
+              <Property name="ui">highlight</Property>
+              <Property name="iconClass">fa fa-paper-plane</Property>
+              <Property name="style">
+                <Property name="font-size">25px</Property>
+              </Property>
+              <Property name="width">100</Property>
+              <Property name="height">40</Property>
+            </TouchButton>
+            <Label>
+              <Property name="width">5</Property>
+            </Label>
+          </TouchToolBar>
+          <TouchDataGrid id="dataGridMsg">
+            <Property name="dataSet">dsMessage</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <Property name="dynaRowHeight">true</Property>
+            <Property name="headerRowHeight">50</Property>
+            <Property name="rowHeight">40</Property>
+            <Property name="style">
+              <Property name="font-size">15px</Property>
+            </Property>
+            <TouchRowNumColumn>
+              <Property name="width">60</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <ClientEvent name="onRenderCell" signature="self,arg,dsMessage">	var priority = arg.data.get(&quot;messagePriority&quot;);&#xD;
+	&#xD;
+	//var priority = dsMessage.getDate().current.get(&quot;messagePriority&quot;);&#xD;
+	&#xD;
+	if(priority == 1){&#xD;
+		arg.dom.style.background = &quot;green&quot;;&#xD;
+	}else if (priority == 2){&#xD;
+		arg.dom.style.background = &quot;yellow&quot;;&#xD;
+	}else if (priority == 3){&#xD;
+		arg.dom.style.background = &quot;red&quot;;&#xD;
+	}&#xD;
+	arg.processDefault = true;</ClientEvent>
+              <Property name="caption">优先级</Property>
+              <Property name="property">messagePriority</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">sendTime</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">topic</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">content</Property>
+              <Property name="width">400</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">senderName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">messageStateDesc</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">deptName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+        </Container>
+      </TabButton>
+    </TouchTabControl>
+    <TouchMenu id="touchMenuState">
+      <Property name="left">1100</Property>
+      <Property name="top">550</Property>
+      <TouchMenuItem id="menuStartTask">
+        <Property name="caption">开始任务</Property>
+        <Property name="userData">3</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuFinishPrepare">
+        <Property name="caption">完成加工前准备</Property>
+        <Property name="userData">4</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuFinishFirstWip">
+        <Property name="caption">完成首件加工</Property>
+        <Property name="userData">5</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuFinishFirstCheck">
+        <Property name="caption">自检完成</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuFinishSecondCheck">
+        <Property name="caption">互检完成</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuFinishThirdCheck">
+        <Property name="caption">首检完成</Property>
+        <Property name="userData">6</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuNormalProcessing">
+        <Property name="caption">正常加工</Property>
+        <Property name="userData">7</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="menuPlanSendCheck">
+        <Property name="caption">预计完工送检时间</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+    </TouchMenu>
+    <TouchMenu id="touchMenuCheck">
+      <Property name="left">1100</Property>
+      <Property name="top">550</Property>
+      <TouchMenuItem id="firstCheck">
+        <Property name="caption">首件自检</Property>
+        <Property name="disabled">false</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="secondCheck">
+        <Property name="caption">首件互检</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="thirdCheck">
+        <Property name="caption">首件检验</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+    </TouchMenu>
+    <TouchMenu id="menuQualityState">
+      <TouchMenuItem id="undetected">
+        <Property name="caption">未检</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="qualified">
+        <Property name="caption">合格</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+      <TouchMenuItem id="unqualified">
+        <Property name="caption">不合格</Property>
+        <Property name="style">
+          <Property name="style">${argument.menuStyle}</Property>
+        </Property>
+      </TouchMenuItem>
+    </TouchMenu>
+    <TouchFloatPanel id="checkBillPanel">
+      <Property name="closeable">true</Property>
+      <Property name="caption">检验单</Property>
+      <Property name="containerUi">optional1</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="width">90%</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="style">
+        <Property name="font-size">20px</Property>
+      </Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="formCheckBill">
+          <Property name="dataSet">dsCheckBill</Property>
+          <Property name="cols">*,*,*,*</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <AutoFormElement>
+            <Property name="name">checkTypeDesc</Property>
+            <Property name="property">checkTypeDesc</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">billNumber</Property>
+            <Property name="property">billNumber</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">checkStateDesc</Property>
+            <Property name="property">checkStateDesc</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">drawingId</Property>
+            <Property name="property">drawingId</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">partName</Property>
+            <Property name="property">partName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">batchnum</Property>
+            <Property name="property">batchnum</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">operationNumber</Property>
+            <Property name="property">operationNumber</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">operaitonName</Property>
+            <Property name="property">operaitonName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">planQty</Property>
+            <Property name="property">planQty</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">submitQty</Property>
+            <Property name="property">submitQty</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">defectQty</Property>
+            <Property name="property">defectQty</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="formEleSn">
+            <Property name="dataSet">dsMaterial</Property>
+            <Property name="property">sn</Property>
+            <Property name="name">sn</Property>
+            <Property name="trigger">dropdownMaterial</Property>
+            <Property name="label">零件编号</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+        <TouchDataGrid id="gridCheckBillDetail" layoutConstraint="padding:10">
+          <Property name="dataSet">dsCheckBill</Property>
+          <Property name="height">250</Property>
+          <Property name="dataPath">#.checkBillDetails</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="selectionMode">multiRows</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <TouchRowSelectorColumn>
+            <Property name="width">60</Property>
+          </TouchRowSelectorColumn>
+          <TouchDataColumn>
+            <Property name="property">materialUsn</Property>
+            <Property name="name">materialUsn</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">dimensionUid</Property>
+            <Property name="property">dimensionUid</Property>
+            <Property name="align">center</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">dimensionTypeDesc</Property>
+            <Property name="property">dimensionTypeDesc</Property>
+            <Property name="align">center</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">standardValue</Property>
+            <Property name="property">standardValue</Property>
+            <Property name="align">center</Property>
+            <Property name="displayFormat">0.##</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">upLimit</Property>
+            <Property name="align">center</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">downLimit</Property>
+            <Property name="align">center</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">actualValue1</Property>
+            <Property name="property">actualValue1</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">true</Property>
+            <Property name="displayFormat">0.##</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">measureToolUid1</Property>
+            <Property name="property">measureToolUid1</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">true</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">actualValue2</Property>
+            <Property name="property">actualValue2</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">false</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">measureToolUid2</Property>
+            <Property name="property">measureToolUid2</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">false</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">actualValue</Property>
+            <Property name="property">actualValue</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">false</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="name">measureToolUid</Property>
+            <Property name="property">measureToolUid</Property>
+            <Property name="align">center</Property>
+            <Property name="visible">false</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">qualityStateDesc</Property>
+            <Property name="align">center</Property>
+            <Property name="width">70</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">checker1</Property>
+            <Property name="visible">true</Property>
+            <Property name="name">checker1</Property>
+            <Property name="align">center</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">checker2</Property>
+            <Property name="visible">false</Property>
+            <Property name="name">checker2</Property>
+            <Property name="align">center</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">checker</Property>
+            <Property name="visible">false</Property>
+            <Property name="name">checker</Property>
+            <Property name="align">center</Property>
+            <Property name="width">90</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">checkTime1</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="visible">false</Property>
+            <Property name="property">checkTime2</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="visible">false</Property>
+            <Property name="property">checkTime</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+        <TouchToolBar>
+          <TextEditor id="editorCheckerandTool">
+            <Property name="style">
+              <Property name="height">45</Property>
+              <Property name="font-size">120%</Property>
+            </Property>
+            <Property name="width">200</Property>
+            <Property name="userData">1</Property>
+            <Property name="blankText">请输入量仪或检验员</Property>
+          </TextEditor>
+          <TouchToolBarSpacer/>
+          <TouchButton id="btnSpecialPartForCheck">
+            <Property name="caption">特殊零件记录</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">150</Property>
+            <Property name="height">40</Property>
+            <Property name="style">
+              <Property name="font-size">100%</Property>
+            </Property>
+            <Property name="visible">false</Property>
+          </TouchButton>
+          <TouchToolBarSeparator/>
+          <TouchButton id="btnCheckAdd1">
+            <Property name="caption">+0.01</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">60</Property>
+            <Property name="height">40</Property>
+            <Property name="style">
+              <Property name="font-size">100%</Property>
+            </Property>
+          </TouchButton>
+          <TouchButton id="btnCheckMinus1">
+            <Property name="caption">-0.01</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="height">40</Property>
+            <Property name="width">60</Property>
+            <Property name="style">
+              <Property name="font-size">100%</Property>
+            </Property>
+          </TouchButton>
+          <TouchButton id="btnCheckAdd5">
+            <Property name="caption">+0.05</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="height">40</Property>
+            <Property name="width">60</Property>
+            <Property name="style">
+              <Property name="font-size">100%</Property>
+            </Property>
+          </TouchButton>
+          <TouchButton id="btnCheckMinus5">
+            <Property name="caption">-0.05</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="height">40</Property>
+            <Property name="width">60</Property>
+            <Property name="style">
+              <Property name="font-size">100%</Property>
+            </Property>
+          </TouchButton>
+          <TouchButton id="btnCheckRatio">
+            <Property name="caption">倍率</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="height">40</Property>
+            <Property name="width">60</Property>
+            <Property name="userData">0.01</Property>
+          </TouchButton>
+          <TouchToolBarSeparator/>
+          <TouchButton id="btnCheckStart">
+            <Property name="caption">开始</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="height">40</Property>
+            <Property name="width">60</Property>
+          </TouchButton>
+          <TouchButton id="btnQualityState">
+            <Property name="caption">状态</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">60</Property>
+            <Property name="height">40</Property>
+            <Property name="userData">1</Property>
+            <Property name="menu">menuQualityState</Property>
+          </TouchButton>
+          <TouchButton id="btnCheckSave">
+            <Property name="caption">保存</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">60</Property>
+            <Property name="height">40</Property>
+          </TouchButton>
+          <TouchButton id="btnCheckFinish">
+            <Property name="caption">完成</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">60</Property>
+            <Property name="height">40</Property>
+          </TouchButton>
+        </TouchToolBar>
+      </Children>
+      <Tools>
+        <TouchButton>
+          <ClientEvent name="onClick">//view.get(&quot;#feedBackProgress&quot;).close();&#xD;
+view.get(&quot;#checkBillPanel&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">关闭</Property>
+          <Property name="iconClass">fa fa-times</Property>
+          <Property name="type">icon-left</Property>
+          <Property name="ui">highlight</Property>
+        </TouchButton>
+      </Tools>
+    </TouchFloatPanel>
+    <TouchFloatPanel id="Deprecated_panelToolSelect" layout="hbox">
+      <Property name="closeable">true</Property>
+      <Property name="caption">工具选取</Property>
+      <Property name="containerUi">optional1</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="height">540</Property>
+      <Property name="width">1200</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Buttons/>
+      <Children>
+        <Container layout="vbox">
+          <Property name="width">1200</Property>
+          <TouchToolBar>
+            <Label>
+              <Property name="text">选择库房：</Property>
+              <Property name="style">
+                <Property name="font-size">20px</Property>
+                <Property name="height">30</Property>
+              </Property>
+            </Label>
+            <TextEditor id="editorToolWarehouse" layoutConstraint="center">
+              <Property name="trigger">dropdownToolWarehouse</Property>
+              <Property name="property">warehouseName</Property>
+              <Property name="style">
+                <Property name="height">30</Property>
+              </Property>
+            </TextEditor>
+            <Label>
+              <Property name="visible">true</Property>
+              <Property name="width">20</Property>
+            </Label>
+            <TouchButton id="btnToolAdd1">
+              <Property name="caption">+1</Property>
+              <Property name="width">50</Property>
+              <Property name="ui">highlight</Property>
+            </TouchButton>
+            <TouchButton id="btnToolMinus1">
+              <Property name="caption">-1</Property>
+              <Property name="width">50</Property>
+              <Property name="ui">highlight</Property>
+            </TouchButton>
+            <TouchToolBarSpacer/>
+            <TouchButton id="btnToolSeleted">
+              <Property name="caption">选定</Property>
+              <Property name="width">50</Property>
+              <Property name="ui">highlight</Property>
+            </TouchButton>
+            <TouchButton id="btnToolClose">
+              <Property name="caption">关闭</Property>
+              <Property name="width">50</Property>
+              <Property name="ui">highlight</Property>
+            </TouchButton>
+          </TouchToolBar>
+          <Container layout="hbox">
+            <TouchDataNestedList id="listToolClass">
+              <Property name="dataSet">dsToolClassInfo</Property>
+              <Property name="caption">工具类型</Property>
+              <BindingConfigs>
+                <BindingConfig>
+                  <Property name="recursive">true</Property>
+                  <Property name="childrenProperty">toolClass</Property>
+                  <Property name="labelProperty">className</Property>
+                </BindingConfig>
+              </BindingConfigs>
+              <Buttons/>
+              <Children/>
+              <Tools/>
+            </TouchDataNestedList>
+            <TouchDataGrid id="gridToolInvInfo" layoutConstraint="padding:10">
+              <ClientEvent name="onTap">view.get(&quot;#feedBackProgress&quot;).hide();</ClientEvent>
+              <Property name="dataSet">dsToolInvInfo</Property>
+              <Property name="height">400</Property>
+              <Property name="autoCreateColumns">true</Property>
+              <Property name="width">880</Property>
+              <Property name="headerRowHeight">44</Property>
+              <Property name="rowHeight">37</Property>
+              <Property name="selectionMode">multiRows</Property>
+              <TouchRowSelectorColumn>
+                <Property name="width">50</Property>
+              </TouchRowSelectorColumn>
+              <TouchDataColumn>
+                <ClientEvent name="onRenderCell" signature="self,arg,panelToolInvDetail,dsToolInvInfo,dsToolInvDetail">	$(arg.dom).empty().xCreate({&#xD;
+&#xD;
+		tagName : &quot;button&quot;,&#xD;
+		content: &quot;查看&quot;,&#xD;
+		onclick: function(){&#xD;
+				var toolInvInfo = dsToolInvInfo.getData().current;&#xD;
+				var partNumber = toolInvInfo.get(&quot;partNumber&quot;);&#xD;
+				&#xD;
+				dsToolInvDetail.set(&quot;parameter&quot;, {&#xD;
+					partNumber: partNumber&#xD;
+			&#xD;
+				});&#xD;
+				&#xD;
+				dsToolInvDetail.flush();&#xD;
+				&#xD;
+				panelToolInvDetail.show();&#xD;
+			}	&#xD;
+		});</ClientEvent>
+                <Property name="name">库存明细</Property>
+              </TouchDataColumn>
+            </TouchDataGrid>
+          </Container>
+        </Container>
+      </Children>
+      <Tools/>
+    </TouchFloatPanel>
+    <TouchFloatPanel id="Deprecated_panelDispatch" layout="hbox">
+      <Property name="closeable">true</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="height">540</Property>
+      <Property name="width">1200</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="style">
+        <Property name="font-size">20px</Property>
+      </Property>
+      <Property name="caption">单据信息</Property>
+      <Buttons/>
+      <Children>
+        <Container>
+          <Property name="width">100%</Property>
+          <TouchDataGrid id="gridInvIo" layoutConstraint="padding:10">
+            <ClientEvent name="onTap">view.get(&quot;#feedBackProgress&quot;).hide();</ClientEvent>
+            <Property name="dataSet">dsInvIo</Property>
+            <Property name="height">220</Property>
+            <Property name="width">100%</Property>
+            <Property name="autoCreateColumns">true</Property>
+            <Property name="rowHeight">40</Property>
+            <TouchRowNumColumn>
+              <Property name="width">40</Property>
+            </TouchRowNumColumn>
+          </TouchDataGrid>
+          <TouchDataGrid id="gridDispatch" layoutConstraint="padding:10">
+            <ClientEvent name="onTap">view.get(&quot;#feedBackProgress&quot;).hide();</ClientEvent>
+            <Property name="dataSet">dsInvIo</Property>
+            <Property name="height">240</Property>
+            <Property name="width">100%</Property>
+            <Property name="autoCreateColumns">false</Property>
+            <Property name="dataPath">#.invIoDetails</Property>
+            <Property name="rowHeight">40</Property>
+            <TouchRowNumColumn>
+              <Property name="width">40</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <Property name="property">sn</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">drawingId</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partName</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">partDescription</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">ioQty</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">invIoId</Property>
+              <Property name="visible">false</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">turnBoxName</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">planReturnDate</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+        </Container>
+      </Children>
+      <Tools>
+        <TouchButton id="btnDispatchClose">
+          <Property name="caption">关闭</Property>
+          <Property name="width">70</Property>
+          <Property name="ui">highlight</Property>
+        </TouchButton>
+        <TouchButton id="btnToolSign">
+          <Property name="caption">签收</Property>
+          <Property name="width">70</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="visible">false</Property>
+        </TouchButton>
+      </Tools>
+    </TouchFloatPanel>
+    <UpdateAction id="updateFeedBack">
+      <Property name="dataResolver">taskDataAccess#feedBackTask</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsWorkRec</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateCheckBill">
+      <Property name="dataResolver">taskDataAccess#saveCheckBills</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsCheckBill</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateTaskToolOut">
+      <Property name="dataResolver">invInfoDataAccess#taskToolOutApply</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTaskTool</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateTaskToolIn">
+      <Property name="dataResolver">invInfoDataAccess#backToWarehouse</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTaskTool</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateShiftStation">
+      <Property name="dataResolver">invInfoDataAccess#shiftWorkStation</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTaskWip</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateTaskWipFeedback">
+      <Property name="dataResolver">taskDataAccess#feedBackTask</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsWipWorkRec</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateDispatch">
+      <Property name="dataResolver">invInfoDataAccess#signMaterialResource</Property>
+    </UpdateAction>
+    <AjaxAction id="ajaxTaskWipOut">
+      <Property name="service">invInfoDataAccess#taskWipOutApply</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxTaskWipIn">
+      <Property name="service">invInfoDataAccess#taskWipInApply</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxSendMessage">
+      <Property name="service">messageDataAccess#sendMessage</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxActionFeedbackState">
+      <Property name="parameter"></Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxCheckFinish">
+      <Property name="service">taskDataAccess#finishCheckTask</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxCheckStart">
+      <Property name="service">taskDataAccess#startCheckTask</Property>
+    </AjaxAction>
+    <TouchDataSetDropDown id="dropdownMaterial">
+      <Property name="dataSet">dsMaterial</Property>
+      <Property name="property">sn</Property>
+      <Property name="displayProperty">sn</Property>
+      <Property name="openMode">bubble</Property>
+    </TouchDataSetDropDown>
+    <TouchListDropDown id="dropdownDefectQty">
+      <Property name="items">
+        <Collection>
+          <Value>0</Value>
+          <Value>1</Value>
+        </Collection>
+      </Property>
+      <Property name="openMode">bubble</Property>
+    </TouchListDropDown>
+    <TouchDataSetDropDown id="dropdownWarehouse">
+      <Property name="displayProperty">warehouseName</Property>
+      <Property name="property">warehouseName</Property>
+      <Property name="dataSet">dsWarehouse</Property>
+      <Property name="openMode">bubble</Property>
+    </TouchDataSetDropDown>
+    <TouchDataSetDropDown id="dropdownToolWarehouse">
+      <Property name="displayProperty">warehouseName</Property>
+      <Property name="property">warehouseName</Property>
+      <Property name="dataSet">dsToolWarehouse</Property>
+      <Property name="openMode">bubble</Property>
+    </TouchDataSetDropDown>
+    <TouchDataSetDropDown id="dropdownStation">
+      <Property name="displayProperty">stationName</Property>
+      <Property name="property">stationName</Property>
+      <Property name="dataSet">dsWorkStation</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchDataSetDropDown>
+    <TouchListDropDown id="dropdownPartNumber">
+      <Property name="items">
+        <Collection>
+          <Value>1</Value>
+          <Value>2</Value>
+          <Value>3</Value>
+        </Collection>
+      </Property>
+      <Property name="openMode">bubble</Property>
+    </TouchListDropDown>
+    <TouchDataSetDropDown id="dropDownDeviceProblem">
+      <Property name="dataSet">dsDeviceProblem</Property>
+      <Property name="displayProperty">problemDesc</Property>
+      <Property name="property">problemDesc</Property>
+      <Property name="openMode">bubble</Property>
+    </TouchDataSetDropDown>
+    <DataSet id="dsInvIoAlert">
+      <Property name="dataType">[InvIo]</Property>
+      <Property name="dataProvider">invInfoDataAccess#alertStationSign</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <TouchFloatPanel id="panelSignByInvIoId">
+      <Property name="closeable">true</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="width">80%</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="style">
+        <Property name="font-size">20px</Property>
+      </Property>
+      <Property name="caption">单据物资信息</Property>
+      <Buttons/>
+      <Children>
+        <TouchDataGrid id="gridInvIoDetail" layoutConstraint="padding:10">
+          <ClientEvent name="onTap">view.get(&quot;#feedBackProgress&quot;).hide();</ClientEvent>
+          <Property name="dataSet">dsInvIo</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="height">300</Property>
+          <Property name="dataPath">#.invIoDetails</Property>
+          <TouchRowNumColumn>
+            <Property name="width">40</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="property">turnBoxName</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">drawingId</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">partName</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">partDescription</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">sn</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">ioQty</Property>
+            <Property name="align">center</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="property">invIoId</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </Children>
+      <Tools>
+        <TouchButton id="btnCloseSignInvIo">
+          <Property name="caption">关闭</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="iconClass">fa fa-times</Property>
+        </TouchButton>
+        <TouchButton id="btnSignInvIo">
+          <Property name="caption">签收</Property>
+          <Property name="width">70</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="visible">true</Property>
+        </TouchButton>
+      </Tools>
+    </TouchFloatPanel>
+    <UpdateAction id="updateShiftStationForTool">
+      <Property name="dataResolver">invInfoDataAccess#shiftWorkStation</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTaskTool</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <TouchFloatPanel id="panelToolInvDetail" layout="hbox">
+      <Property name="closeable">true</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="height">300</Property>
+      <Property name="width">400</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="style">
+        <Property name="font-size">20px</Property>
+      </Property>
+      <Buttons>
+        <TouchButton id="btnToolInvClose">
+          <Property name="caption">关闭</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="iconClass">fa fa-times</Property>
+        </TouchButton>
+      </Buttons>
+      <Children>
+        <Container>
+          <Property name="width">100%</Property>
+          <TouchDataGrid id="gridToolInvDetail">
+            <Property name="autoCreateColumns">false</Property>
+            <Property name="dataSet">dsToolInvDetail</Property>
+            <Property name="rowHeight">40</Property>
+            <TouchRowNumColumn>
+              <Property name="width">60</Property>
+              <Property name="align">center</Property>
+            </TouchRowNumColumn>
+            <TouchDataColumn>
+              <Property name="property">warehouseName</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+            <TouchDataColumn>
+              <Property name="property">invQty</Property>
+              <Property name="align">center</Property>
+            </TouchDataColumn>
+          </TouchDataGrid>
+        </Container>
+      </Children>
+      <Tools>
+        <Label>
+          <Property name="text">库房信息</Property>
+          <Property name="style">
+            <Property name="font-size">150%</Property>
+          </Property>
+        </Label>
+      </Tools>
+    </TouchFloatPanel>
+    <TouchFloatPanel id="panelFileFull">
+      <Property name="closeable">true</Property>
+      <Property name="contentOverflowX">visible</Property>
+      <Property name="contentOverflowY">visible</Property>
+      <Property name="center">true</Property>
+      <Property name="closeAction">close</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="draggable">true</Property>
+      <Property name="droppable">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="style">
+        <Property name="font-size">25px</Property>
+      </Property>
+      <Buttons/>
+      <Children>
+        <IFrame id="iFrameFileFull" layoutConstraint="right"/>
+      </Children>
+      <Tools>
+        <TouchButton id="btnFileBack">
+          <Property name="caption">返回列表</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <Property name="icon">image/left.gif</Property>
+          <Property name="width">120</Property>
+        </TouchButton>
+      </Tools>
+    </TouchFloatPanel>
+  </View>
+</ViewConfig>

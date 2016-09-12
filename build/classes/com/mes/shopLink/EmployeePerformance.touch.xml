@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments>
+    <Argument name="btnStyle">
+      <Property name="value">;font-size:25px;height:40px;width:65px</Property>
+    </Argument>
+    <Argument name="formStyle">
+      <Property name="value">;font-size:20px;height:20px</Property>
+    </Argument>
+    <Argument name="menuStyle">
+      <Property name="value">;font-size:25px;height:45px</Property>
+    </Argument>
+  </Arguments>
+  <Context/>
+  <Model>
+    <DataType name="QualityRec">
+      <Property name="creationType">com.shoplink.entity.QualityRec</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchnum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="operationNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="operaitonName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="reworkinfo">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="repairinfo">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="rejectinfo">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="WorkRec">
+      <Property name="creationType">com.shoplink.entity.SumWorkRec</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchNum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="operationIdDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="completeQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="completeWork">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="workDate">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="workType">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="SumWork">
+      <Property name="creationType">com.shoplink.entity.SumWork</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="personalCompleteWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="shopAveCompleteWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="shopMaxCompleteWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="shopMinCompleteWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="personalOvertimeWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="personalAbsenceWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="personalShutdownWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+      <PropertyDef name="personalRejectWork">
+        <Property name="dataType">float</Property>
+        <Property name="displayFormat">0.00</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="NonWorkHour">
+      <Property name="creationType">com.shoplink.entity.NonWorkHour</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="workReason">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="manHourType">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="applyWork">
+        <Property name="dataType">double</Property>
+      </PropertyDef>
+      <PropertyDef name="employeeWork">
+        <Property name="dataType">double</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="TypesData">
+      <Property name="creationType">com.shoplink.entity.TypesData</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="typeValue">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="typeDesc">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="userData">0</Property>
+    <DataSet id="dsWorkRec">
+      <Property name="dataType">[WorkRec]</Property>
+      <Property name="dataProvider">employeeDataAccess#getEmployeeWorkrecByMonth</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <DataSet id="dsSumWork">
+      <Property name="dataType">[SumWork]</Property>
+      <Property name="loadMode">manual</Property>
+      <Property name="dataProvider">employeeDataAccess#getPersonalOvertimeWork</Property>
+    </DataSet>
+    <DataSet id="dsQualityRec">
+      <Property name="dataType">[QualityRec]</Property>
+      <Property name="loadMode">lazy</Property>
+      <Property name="dataProvider">employeeDataAccess#getQualityRecByMonth</Property>
+    </DataSet>
+    <DataSet id="dsNonWorkHour">
+      <Property name="dataType">[NonWorkHour]</Property>
+      <Property name="dataProvider">employeeDataAccess#getNonWorkHourByMonth</Property>
+    </DataSet>
+    <DataSet id="dsWorkType">
+      <Property name="dataType">[TypesData]</Property>
+      <Property name="dataProvider">employeeDataAccess#getWorkType</Property>
+    </DataSet>
+    <DataSet id="dsWorkReason">
+      <Property name="dataType">[TypesData]</Property>
+      <Property name="dataProvider">employeeDataAccess#getWorkReason</Property>
+    </DataSet>
+    <TouchToolBar id="toolBar_employeePerformance" layoutConstraint="top">
+      <Property name="height">50</Property>
+      <Property name="style">
+        <Property name="font-size">25px</Property>
+      </Property>
+      <TouchButton id="preMonth">
+        <Property name="caption">上一月</Property>
+        <Property name="ui">highlight</Property>
+        <Property name="width">100</Property>
+        <Property name="style">
+          <Property name="style">${argument.btnStyle}</Property>
+        </Property>
+      </TouchButton>
+      <TouchToolBarSpacer/>
+      <TouchButton id="nextMonth">
+        <Property name="caption">下一月</Property>
+        <Property name="ui">highlight</Property>
+        <Property name="width">100</Property>
+        <Property name="style">
+          <Property name="style">${argument.btnStyle}</Property>
+        </Property>
+      </TouchButton>
+    </TouchToolBar>
+    <Container layout="form cols:*,*,*,*,*,*" layoutConstraint="top">
+      <Property name="style">
+        <Property name="style">${argument.formStyle}</Property>
+      </Property>
+      <Label>
+        <Property name="text">本月个人完成情况：</Property>
+      </Label>
+      <Label>
+        <Property name="dataSet">dsSumWork</Property>
+        <Property name="property">personalCompleteWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">工段平均完成：</Property>
+      </Label>
+      <Label>
+        <Property name="dataSet">dsSumWork</Property>
+        <Property name="property">shopAveCompleteWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">加班工时：</Property>
+      </Label>
+      <Label layoutConstraint="align:left">
+        <Property name="property">personalOvertimeWork</Property>
+        <Property name="dataSet">dsSumWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">工段最大完成：</Property>
+      </Label>
+      <Label>
+        <Property name="dataSet">dsSumWork</Property>
+        <Property name="property">shopMaxCompleteWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">停工工时：</Property>
+      </Label>
+      <Label>
+        <Property name="property">personalShutdownWork</Property>
+        <Property name="dataSet">dsSumWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">缺勤工时：</Property>
+      </Label>
+      <Label>
+        <Property name="property">personalAbsenceWork</Property>
+        <Property name="dataSet">dsSumWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">工段最小完成：</Property>
+      </Label>
+      <Label>
+        <Property name="dataSet">dsSumWork</Property>
+        <Property name="property">shopMinCompleteWork</Property>
+      </Label>
+      <Label>
+        <Property name="text">废品工时：</Property>
+        <Property name="visible">false</Property>
+      </Label>
+      <Label>
+        <Property name="dataSet">dsSumWork</Property>
+        <Property name="property">personalRejectWork</Property>
+        <Property name="visible">false</Property>
+      </Label>
+      <Label>
+        <Property name="text">返工工时：</Property>
+        <Property name="visible">false</Property>
+      </Label>
+      <Label>
+        <Property name="visible">false</Property>
+      </Label>
+    </Container>
+    <TouchTabControl id="tabCtrl_employeePerformance">
+      <TabButton id="tabButton1">
+        <Property name="caption">加工记录</Property>
+        <Property name="width">150</Property>
+        <Property name="style">
+          <Property name="font-family">微软雅黑</Property>
+          <Property name="font-size">25px</Property>
+        </Property>
+        <TouchDataGrid id="dataGrid_workRec" layoutConstraint="padding:100">
+          <Property name="dataSet">dsWorkRec</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="dynaRowHeight">true</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <Property name="selectionMode">multiRows</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="height">100%</Property>
+          <TouchRowNumColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">序号</Property>
+            <Property name="width">80</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">类型</Property>
+            <Property name="property">workType</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">图号</Property>
+            <Property name="property">drawingId</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">名称</Property>
+            <Property name="property">partName</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">批次</Property>
+            <Property name="property">batchNum</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">工序</Property>
+            <Property name="property">operationIdDesc</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工数</Property>
+            <Property name="property">completeQty</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工工时</Property>
+            <Property name="property">completeWork</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工日期</Property>
+            <Property name="property">workDate</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+      <TabButton id="tabButton2">
+        <Property name="caption">非加工工时</Property>
+        <Property name="width">150</Property>
+        <Property name="style">
+          <Property name="font-family">微软雅黑</Property>
+          <Property name="font-size">25px</Property>
+        </Property>
+        <TouchDataGrid id="dataGrid_nonWorkHour">
+          <Property name="dataSet">dsNonWorkHour</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="dynaRowHeight">true</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <Property name="selectionMode">multiRows</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="height">100%</Property>
+          <TouchRowNumColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">序号</Property>
+            <Property name="width">80</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">类型</Property>
+            <Property name="property">manHourType</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">事由</Property>
+            <Property name="property">workReason</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">申请（分钟）</Property>
+            <Property name="property">applyWork</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">申请时间</Property>
+            <Property name="property">createTime</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">批准（分钟）</Property>
+            <Property name="property">employeeWork</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">审批</Property>
+            <Property name="property">checkState</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">审批时间</Property>
+            <Property name="property">checkTime</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+      <TabButton id="tabButton3">
+        <Property name="caption">质量记录</Property>
+        <Property name="width">150</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="font-family">微软雅黑</Property>
+        </Property>
+        <TouchDataGrid id="dataGrid_qualityRec">
+          <Property name="rowHeight">40</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="dynaRowHeight">true</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <Property name="selectionMode">multiRows</Property>
+          <Property name="dataSet">dsQualityRec</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="height">100%</Property>
+          <TouchRowNumColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">序号</Property>
+            <Property name="width">80</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">图号</Property>
+            <Property name="property">drawingId</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">批次</Property>
+            <Property name="property">batchnum</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">工序</Property>
+            <Property name="property">operationNumber</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">返工/单号</Property>
+            <Property name="property">reworkinfo</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">让步/单号</Property>
+            <Property name="property">repairinfo</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">报废/单号</Property>
+            <Property name="property">rejectinfo</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+    </TouchTabControl>
+    <TouchDateTimeDropDown id="touchDateTimeDropDown1"/>
+    <TouchFloatPanel id="floatPanel_nonWorkHour">
+      <Property name="center">true</Property>
+      <Property name="caption">非加工工时申请</Property>
+      <Property name="style">
+        <Property name="font-size">25px</Property>
+      </Property>
+      <Property name="width">400</Property>
+      <Buttons>
+        <TouchButton id="btn_submit">
+          <Property name="caption">提交</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="height">40</Property>
+        </TouchButton>
+        <TouchButton id="btn_cancel">
+          <Property name="caption">取消</Property>
+          <Property name="ui">highlight</Property>
+          <Property name="height">40</Property>
+        </TouchButton>
+      </Buttons>
+      <Children>
+        <Container layout="form cols:*,*">
+          <Label>
+            <Property name="text">申请类型</Property>
+          </Label>
+          <TextEditor id="textEditor_type">
+            <Property name="trigger">dsDD_workType</Property>
+            <Property name="style">
+              <Property name="style">${argument.menuStyle}</Property>
+            </Property>
+            <Property name="editable">false</Property>
+          </TextEditor>
+          <Label>
+            <Property name="text">申请工时数</Property>
+          </Label>
+          <TextEditor id="textEditor_hour">
+            <Property name="trigger">DD_hour</Property>
+            <Property name="style">
+              <Property name="style">${argument.menuStyle}</Property>
+            </Property>
+            <Property name="editable">false</Property>
+          </TextEditor>
+          <Label>
+            <Property name="text">申请事由</Property>
+          </Label>
+          <TextEditor id="textEditor_reason">
+            <Property name="trigger">dsDD_workReason</Property>
+            <Property name="style">
+              <Property name="style">${argument.menuStyle}</Property>
+            </Property>
+            <Property name="editable">false</Property>
+          </TextEditor>
+        </Container>
+      </Children>
+      <Tools/>
+    </TouchFloatPanel>
+    <TouchDataSetDropDown id="dsDD_workType">
+      <Property name="dataSet">dsWorkType</Property>
+      <Property name="property">typeDesc</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="vMargin">32</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchDataSetDropDown>
+    <TouchDataSetDropDown id="dsDD_workReason">
+      <Property name="dataSet">dsWorkReason</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="property">typeDesc</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchDataSetDropDown>
+    <TouchListDropDown id="DD_type">
+      <Property name="items">类型一,类型二,类型三,其他</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchListDropDown>
+    <TouchListDropDown id="DD_hour">
+      <Property name="items">10,50,100</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchListDropDown>
+    <TouchListDropDown id="DD_reason">
+      <Property name="items">原因一,原因二,原因三</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchListDropDown>
+    <AjaxAction id="ajax_workHourApply">
+      <Property name="service">employeeDataAccess#updateNonWorkHourApplyInfo</Property>
+      <Property name="executingMessage">更新非加工工时申请信息...</Property>
+      <Property name="successMessage">更新非加工工时申请信息成功！</Property>
+    </AjaxAction>
+    <AjaxAction id="ajax_workRec"/>
+    <AjaxAction id="ajax_sumWork"/>
+    <AjaxAction id="ajax_nonWorkHour"/>
+    <AjaxAction id="ajax_qualityRec"/>
+  </View>
+</ViewConfig>

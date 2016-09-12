@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments>
+    <Argument name="btnStyle">
+      <Property name="value">;font-size:30px;height:45px;width:70px</Property>
+    </Argument>
+  </Arguments>
+  <Context/>
+  <Model>
+    <DataType name="CheckUpRecord">
+      <Property name="creationType">com.shoplink.entity.CheckupRec</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="content">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="method">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checker">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="checkTime">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="checkResults">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="WorkRec">
+      <Property name="creationType">com.shoplink.entity.SumWorkRec</Property>
+      <PropertyDef name="objectState">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchNum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="operationIdDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="completeQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="completeWork">
+        <Property name="dataType">double</Property>
+      </PropertyDef>
+      <PropertyDef name="workDate">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="InvInfo">
+      <Property name="creationType">com.shoplink.entity.InvInfo</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="materialUsn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partType">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partTypeDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="partDescription">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="batchNum">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="sn">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="reqQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="receivedQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="taskStateDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="applyStateDesc">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="position">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="applyQty">
+        <Property name="dataType">float</Property>
+      </PropertyDef>
+      <PropertyDef name="boxName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="planReturnDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="signDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="invDemandId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="invDemandSeq">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="ShiftInfo">
+      <Property name="creationType">com.shoplink.entity.ShiftInfo</Property>
+      <PropertyDef name="objectState">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="shiftId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="shiftName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deviceUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="handoverEmployeedUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="takeoverEmployeedUid">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="takeoverEmployeeName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="shiftContent">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="note">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="lastShiftTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="shiftTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="TakeOverEmployeeInfo">
+      <Property name="creationType">com.shoplink.entity.TakeOverEmployeeInfo</Property>
+      <PropertyDef name="employeeName">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsCheckUpRecord">
+      <Property name="dataType">[CheckUpRecord]</Property>
+      <Property name="loadMode">manual</Property>
+      <Property name="dataProvider">deviceDataAccess#getDeviceCheckupRecord</Property>
+    </DataSet>
+    <DataSet id="dsWorkRec">
+      <Property name="dataType">[WorkRec]</Property>
+      <Property name="dataProvider">shiftDataAccess#getEmployeeWorkrecByShift</Property>
+    </DataSet>
+    <DataSet id="dsInvInfo">
+      <Property name="dataType">[InvInfo]</Property>
+      <Property name="dataProvider">invInfoDataAccess#getStationInvInfo</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="toolType">all</Property>
+          <Property name="deviceUid">192168100147</Property>
+        </Entity>
+      </Property>
+    </DataSet>
+    <DataSet id="dsShiftInfo">
+      <Property name="dataType">[ShiftInfo]</Property>
+      <Property name="loadMode">manual</Property>
+      <Property name="dataProvider">shiftDataAccess#getShiftInfo</Property>
+    </DataSet>
+    <DataSet id="dsTakeOverEmployeeInfo">
+      <Property name="dataType">[TakeOverEmployeeInfo]</Property>
+      <Property name="dataProvider">shiftDataAccess#getTakeOverEmployee</Property>
+      <Property name="loadMode">manual</Property>
+    </DataSet>
+    <TouchTabControl id="tabControl_shift">
+      <ClientEvent name="onCurrentChange">//var currentTab = cardBook.get(&quot;currentTab&quot;);&#xD;
+//alert(self.get(&quot;#tabControl_shift.currentTab&quot;));&#xD;
+//self.get(&quot;#tabControl_shift&quot;).get(&quot;currentTab&quot;).set(&quot;style&quot;,&quot;#00B3FF&quot;);&#xD;
+</ClientEvent>
+      <TabButton>
+        <Property name="caption">工位物料</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="background"></Property>
+        </Property>
+        <Property name="width">160</Property>
+        <Container layout="vbox">
+          <Property name="height">185</Property>
+          <TouchToolBar>
+            <Property name="caption">工位物料</Property>
+          </TouchToolBar>
+        </Container>
+        <TouchDataGrid id="dataGrid_material">
+          <Property name="dataSet">dsInvInfo</Property>
+          <Property name="height">145</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <TouchRowNumColumn>
+            <Property name="caption">序号</Property>
+            <Property name="width">30</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">序号</Property>
+            <Property name="property">sn</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">状态</Property>
+            <Property name="visible">f</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">类型</Property>
+            <Property name="property">partTypeDesc</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">图号</Property>
+            <Property name="property">drawingId</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">名称</Property>
+            <Property name="property">partName</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">规格</Property>
+            <Property name="align">center</Property>
+            <Property name="property">partDescription</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">数量</Property>
+            <Property name="property">receivedQty</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">编号</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+      <TabButton>
+        <Property name="caption">设备点检记录</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="background"></Property>
+        </Property>
+        <Property name="width">160</Property>
+        <TouchToolBar>
+          <Property name="caption">设备点检记录</Property>
+        </TouchToolBar>
+        <TouchDataGrid id="dataGrid_checkupRec">
+          <Property name="dataSet">dsCheckUpRecord</Property>
+          <Property name="height">145</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <TouchRowNumColumn>
+            <Property name="caption">序号</Property>
+            <Property name="width">30</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="caption">序号</Property>
+            <Property name="align">center</Property>
+            <Property name="property">uniqueid</Property>
+            <Property name="width">30</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">点检内容</Property>
+            <Property name="property">content</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">点检方法</Property>
+            <Property name="align">center</Property>
+            <Property name="property">method</Property>
+            <Property name="width">130</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">点检结果</Property>
+            <Property name="align">center</Property>
+            <Property name="property">checkResults</Property>
+            <Property name="width">130</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">点检者</Property>
+            <Property name="align">center</Property>
+            <Property name="property">checker</Property>
+            <Property name="width">130</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="caption">点检时间</Property>
+            <Property name="align">center</Property>
+            <Property name="property">checkTime</Property>
+            <Property name="width">130</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+      <TabButton>
+        <Property name="caption">本班加工记录</Property>
+        <Property name="style">
+          <Property name="font-size">25px</Property>
+          <Property name="background"></Property>
+        </Property>
+        <Property name="width">160</Property>
+        <TouchToolBar>
+          <Property name="caption">本班加工记录</Property>
+        </TouchToolBar>
+        <TouchDataGrid id="dataGrid_workRec">
+          <Property name="dataSet">dsWorkRec</Property>
+          <Property name="dynaRowHeight">false</Property>
+          <Property name="autoCreateColumns">false</Property>
+          <Property name="height">145</Property>
+          <Property name="headerRowHeight">50</Property>
+          <Property name="rowHeight">40</Property>
+          <Property name="style">
+            <Property name="font-size">20px</Property>
+          </Property>
+          <TouchRowNumColumn>
+            <Property name="caption">序号</Property>
+            <Property name="align">center</Property>
+            <Property name="width">30</Property>
+          </TouchRowNumColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">序号</Property>
+            <Property name="width">80</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">类型</Property>
+            <Property name="width">80</Property>
+            <Property name="visible">false</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">图号</Property>
+            <Property name="property">drawingId</Property>
+            <Property name="width">80</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">名称</Property>
+            <Property name="property">partName</Property>
+            <Property name="width">160</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">批次</Property>
+            <Property name="property">batchNum</Property>
+            <Property name="width">80</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">工序</Property>
+            <Property name="property">operationIdDesc</Property>
+            <Property name="width">80</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工数</Property>
+            <Property name="property">completeQty</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工工时</Property>
+            <Property name="property">completeWork</Property>
+          </TouchDataColumn>
+          <TouchDataColumn>
+            <Property name="align">center</Property>
+            <Property name="caption">完工日期</Property>
+            <Property name="property">workDate</Property>
+          </TouchDataColumn>
+        </TouchDataGrid>
+      </TabButton>
+    </TouchTabControl>
+    <TouchPanel layoutConstraint="bottom">
+      <Buttons/>
+      <Children>
+        <TouchToolBar>
+          <Property name="height">60</Property>
+          <TextEditor id="textEditor_barcode">
+            <Property name="blankText">请刷人员编码</Property>
+            <Property name="style">
+              <Property name="font-size">20px</Property>
+              <Property name="height">45</Property>
+            </Property>
+          </TextEditor>
+          <Label layoutConstraint="align:center">
+            <Property name="width">50</Property>
+          </Label>
+          <Label id="lbl_takeOverEmployee" layoutConstraint="align:center">
+            <Property name="style">
+              <Property name="font-size">30px</Property>
+            </Property>
+            <Property name="width">200</Property>
+            <Property name="property">employeeName</Property>
+            <Property name="dataSet">dsTakeOverEmployeeInfo</Property>
+          </Label>
+          <Label layoutConstraint="align:center">
+            <Property name="width">50</Property>
+          </Label>
+          <TouchToolBarSpacer/>
+          <TouchButton>
+            <Property name="caption">班次：</Property>
+            <Property name="style">
+              <Property name="style">${argument.btnStyle}</Property>
+              <Property name="border">0</Property>
+            </Property>
+          </TouchButton>
+          <TextEditor id="textEditor_exchangeShift">
+            <Property name="text">一班</Property>
+            <Property name="trigger">DD_exchangeShift</Property>
+            <Property name="style">
+              <Property name="height">45</Property>
+              <Property name="font-size">30px</Property>
+            </Property>
+            <Property name="readOnly">false</Property>
+            <Property name="editable">false</Property>
+          </TextEditor>
+          <Label layoutConstraint="align:center">
+            <Property name="width">20</Property>
+          </Label>
+          <TouchButton id="btn_shift">
+            <Property name="caption">交班</Property>
+            <Property name="ui">highlight</Property>
+            <Property name="width">80</Property>
+            <Property name="style">
+              <Property name="style">${argument.btnStyle}</Property>
+            </Property>
+          </TouchButton>
+        </TouchToolBar>
+      </Children>
+      <Tools/>
+    </TouchPanel>
+    <TouchListDropDown id="DD_exchangeShift">
+      <Property name="items">一班,二班,三班</Property>
+      <Property name="openMode">bubble</Property>
+      <Property name="autoOpen">true</Property>
+    </TouchListDropDown>
+    <AjaxAction id="ajax_updateShiftInfo">
+      <Property name="service">shiftDataAccess#updateShiftInfo</Property>
+      <Property name="executingMessage">正在更新交班信息...</Property>
+      <Property name="successMessage">成功更新交班</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

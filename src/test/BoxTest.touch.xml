@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig meta="clientType:touch">
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <TouchButton id="btn1">
+      <Property name="caption">box</Property>
+    </TouchButton>
+    <AjaxAction id="ajaxAction1">
+      <Property name="service">invInfoDataAccess#addBox</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>
